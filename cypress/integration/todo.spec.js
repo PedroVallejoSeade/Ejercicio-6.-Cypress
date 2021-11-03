@@ -28,10 +28,14 @@ describe('TODOS page', () => {
       .type('new TODO')
       .get('button[type=submit]')
       .click()
+      .get('input')
+      .type('new TODO')
+      .get('button[type=submit]')
+      .click()
       .get('.list-group > .list-group-item:first > button')
       .click()
       .get('.list-group')
       .find('.list-group-item')
-      .should('have.length', 0);
+      .should('have.length', 1);
   });
 });
